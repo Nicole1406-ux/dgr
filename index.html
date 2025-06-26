@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body, html {
-      margin: 0; 
-      padding: 0; 
-      overflow: hidden; 
-      height: 100vh; 
-      width: 100vw;
-      position: relative;
-    }
-    model-viewer {
-      width: 100%; 
-      height: 100%;
-      background: #ffffff;
-      display: block;
-    }
-  </style>
 </head>
 <body>
-<button id="klickButton">Storyline-Variable setzen</button>
+  <button id="Tab0">Home</button>
+<script>
+const player = window.parent.GetPlayer();
 
-    <script>
-        document.getElementById("klickButton").addEventListener("click", function () {
-            // Zugriff auf den Storyline-Player im Parent-Fenster
-            var player = window.parent.GetPlayer();
+  console.log("Player object:", player);
 
-            // Variable setzen
-            player.SetVar("Ergebnis", "erledigt");
+  document.getElementById('Tab0').addEventListener('click', function () {
+    console.log("Button clicked!");
 
-            // Optional: Log zum Testen
-            console.log("Storyline-Variable 'Ergebnis' wurde auf 'erledigt' gesetzt.");
-        });
-  <model-viewer id="mv" src="Karton_Leer.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
-
+    player.SetVar('Home', true);
+  });
+                                                  
   
+</script>
 </body>
 </html>
