@@ -23,6 +23,19 @@
 <body>
 
   <model-viewer id="mv" src="Karton_Leer.glb" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+<button onclick="notifyStoryline()">Storyline triggern</button>
 
+<script>
+  function notifyStoryline() {
+    // Zugriff auf die Storyline-Player-API
+    var player = parent.GetPlayer();
+
+    // Beispiel: Setze eine Variable in Storyline
+    player.SetVar("MeineVariable", "aus Webobjekt gesetzt");
+
+    // Oder du kannst damit z. B. auch Trigger auslösen (z. B. per Variablenänderung)
+  }
+</script>
+  
 </body>
 </html>
